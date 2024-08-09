@@ -168,6 +168,9 @@ export type Config = {
     javdb: {
         session?: string;
     };
+    keylol: {
+        cookie?: string;
+    };
     lastfm: {
         api_key?: string;
     };
@@ -268,7 +271,6 @@ export type Config = {
         username?: string[];
         password?: string[];
         authenticationSecret?: string[];
-        cookie?: string;
         authToken?: string[];
     };
     weibo: {
@@ -535,6 +537,9 @@ const calculateValue = () => {
         javdb: {
             session: envs.JAVDB_SESSION,
         },
+        keylol: {
+            cookie: envs.KEYLOL_COOKIE,
+        },
         lastfm: {
             api_key: envs.LASTFM_API_KEY,
         },
@@ -639,7 +644,6 @@ const calculateValue = () => {
             username: envs.TWITTER_USERNAME?.split(','),
             password: envs.TWITTER_PASSWORD?.split(','),
             authenticationSecret: envs.TWITTER_AUTHENTICATION_SECRET?.split(','),
-            cookie: envs.TWITTER_COOKIE,
             authToken: envs.TWITTER_AUTH_TOKEN?.split(','),
         },
         weibo: {
